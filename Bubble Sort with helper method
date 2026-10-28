@@ -1,0 +1,46 @@
+public class bubblesort_helper{
+  
+  public static int[] sort(int[]arr){
+    
+    int n= arr.length;
+    
+    for(int i=0; i<n; i++){
+      int flag = 0;
+      
+      for(int j=0; j<n-1-i; j++){
+        if(arr[j]>arr[j+1]){
+          int temp= arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+          
+          flag=1;
+          
+        }
+      }
+      if(flag==0){
+        break;
+      }
+    }
+    return arr;
+  }
+}
+
+
+
+
+
+
+public class bubblesort_opt{
+  public static void main(String [] args){
+    int [] arr = {50,65,5,16,28,2,9,56,87,7,10};
+    
+    arr = bubblesort_helper.sort(arr);
+    
+    System.out.println("Sorted array:");
+    
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i] + " ");
+      
+    }
+  }
+}
